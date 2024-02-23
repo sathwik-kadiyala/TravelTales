@@ -1,0 +1,177 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #fffbfb;
+    /* background-color: black; */
+    font-family: "Varela Round", sans-serif;
+    z-index: 1;
+}
+
+.navleft,
+.navright {
+
+    flex: 3;
+    display: flex;
+
+}
+
+.navmiddle {
+    flex: 6;
+}
+
+.let {
+    text-decoration: none;
+}
+
+.title {
+
+    margin-left: 3px;
+    font-weight: 600;
+    color: #999;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.letter {
+
+    font-size: 40px;
+}
+
+.middlelinks {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+}
+
+.middleitems {
+
+    cursor: pointer;
+    font-size: 19px;
+    color: #777;
+    font-weight: 300;
+    margin-right: 20px;
+}
+
+.RightLinks {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+}
+
+.rightitems {
+    font-size: 19px;
+    color: #777;
+    font-weight: 300;
+    margin-right: 22px;
+
+}
+
+.hams {
+    display: none;
+}
+
+.hambutton {
+    border: none;
+    background-color: #fffbfb;
+}
+
+.hamline {
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    margin: 0 0;
+    color: black;
+    font-size: 26px;
+}
+.topImg {
+    /* width: 60px; */
+    height: 50px;
+    mix-blend-mode: multiply;
+    /* border-radius: 40%; */
+    object-fit: cover;
+    /* margin-right: 15px; */
+    cursor: pointer;
+  }
+
+@media screen and (max-width: 900px) and (min-width: 660px) {
+    .rightitems {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .hams {
+        display: block;
+    }
+
+    .show {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .show .middlelinks {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .show .middlelinks .middleitems {
+        padding-bottom: 12px;
+    }
+
+    .showr .RightLinks {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .showr .RightLinks .rightitems {
+        padding:8px;
+    }
+
+    .show {
+        height: 120px;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #fffbfb;
+        width: 100%;
+
+    }
+
+    .showr {
+        height: 70px;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #fffbfb;
+        width: 100%;
+
+    }
+
+    .navmiddle,
+    .navright {
+        display: none;
+    }
+
+}

@@ -1,0 +1,30 @@
+.home{
+    margin-top: calc(100vh - 50px);
+    display: flex;
+
+}
+.posts{
+    flex: 9;
+    margin-top: 22px;
+
+}
+.sideinfo{
+    margin-top: 22px;
+    flex: 3;
+    margin-right: 12px;
+}
+@media screen and (max-width: 660px) {
+    .home{
+        position: absolute;
+        top: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sideinfo{
+        width: 90%;
+    }
+    .posts{
+        
+        width: 100%;
+    }
+}

@@ -1,0 +1,66 @@
+.single{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.singleimg{
+    width: 60%;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.singleinfo{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    
+}
+.singletitle{
+    position: relative;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+.singleauthor{
+    font-family: "Lora";
+    font-size: 18px;
+    color: tomato;
+}
+.singledesc{
+    width: 75%;
+    text-align: justify;
+    font-family: "Varela Round", sans-serif;
+    line-height: 25px;
+}
+.singleicons{
+    float: right;
+}
+.singleitems{
+    cursor: pointer;
+    font-size: 19px;
+    margin-left: 13px;
+}
+.singleitems:first-child{
+    color: aqua;
+}
+.singleitems:last-child{
+    color: tomato;
+}
+
+@media screen and (max-width: 660px) {
+    .singledesc{
+        width: 90%;
+    }
+    .singleinfo{
+        width: 95%;
+        padding: 0px 4px;
+    }
+    .singleimg{
+        width: 90%;
+    }
+}

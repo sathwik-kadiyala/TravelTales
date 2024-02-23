@@ -1,0 +1,48 @@
+.Post{
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 7px 19px;
+    cursor: pointer;
+}
+.postimg{
+    margin: 4px 0;
+    height:300px;
+    width: 100%;
+    border-radius: 9px;
+    object-fit: cover;
+}
+.postinfo{
+
+    font-family: "Varela Round", sans-serif;
+    text-align: center;
+    
+}
+.posttitle{
+   font-size: 20px;
+
+}
+.author{
+    color: teal;
+    font-family: "Lora", serif;
+    font-size: 18px;
+
+}
+.postdesc{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-align: justify;
+}
+@media screen and (max-width: 660px){
+    .Post{
+        width: 100%;
+    }
+    
+}

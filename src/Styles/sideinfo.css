@@ -1,0 +1,36 @@
+.aboutme {
+    margin:9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+}
+
+.aboutimg {
+    height: 350px;
+    width: 90%;
+    object-fit: cover;
+    object-position: top;
+    margin: 9px 3px;
+    border-radius: 8px;
+}
+
+.abouttitle {
+    width: auto;
+    font-size: 26px;
+    padding: 10px 4px;
+    text-align: center;
+    font-family: "Varela Round", sans-serif;
+    border-top: 2px solid khaki;
+    border-bottom: 2px solid khaki;
+}
+.aboutdesc{
+    text-align: justify;
+    padding: 4px 5px;
+line-height:24px;
+font-size: 16px;
+}
