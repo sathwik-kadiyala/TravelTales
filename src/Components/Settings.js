@@ -3,7 +3,7 @@ import { useState } from 'react';
 import userimg from '../assets-images/user.jpg';
 import { useNavigate } from 'react-router-dom';
 
-export default function Settings({setuserinfo}) {
+export default function Settings({user,setuserinfo}) {
   const navigate=useNavigate()
   const [imgsrc, setImgsrc] = useState('')
   const[name,setName]=useState('')
@@ -20,7 +20,8 @@ function handleSubmit() {
   const userinf = {
     img: imgsrc,
     author:name,
-    desc: about
+    desc: about,
+    email:user?.email
 }
   setuserinfo(userinf)
   navigate('/')
