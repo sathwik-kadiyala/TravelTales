@@ -27,8 +27,8 @@ export default function Login({ user }) {
       <form className="loginForm" onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="email">Email</label>
         <input id='email' className="loginInput" value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Enter your email..." />
-        <label htmlfor='password'>Password</label>
-        <input id='password' className="loginInput" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Enter your password..." />
+        <label htmlFor='password'>Password</label>
+        <input id='password' autoComplete="on" className="loginInput" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Enter your password..." />
         {error && <span className="invalid"> Enter Valid Email or password.</span>}
         <button className="loginButton" onClick={handleClick}>Login</button>
       </form>

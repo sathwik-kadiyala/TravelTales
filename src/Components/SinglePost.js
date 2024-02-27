@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams,useNavigate } from 'react-router-dom';
 import '../Styles/singlepost.css'
 
-export default function SinglePost({setUpdate,single,setSingle, userinfo, user, postdata ,setPostdata}) {
+export default function SinglePost({setUpdate,single,setSingle, user, postdata ,setPostdata}) {
   const params = useParams();
   const navigate = useNavigate();
   useEffect(() => {
@@ -15,14 +15,14 @@ export default function SinglePost({setUpdate,single,setSingle, userinfo, user, 
 
     const updatedPosts = postdata.filter((item) => item.id !== single?.id);
     setPostdata(updatedPosts);
-    setSingle('')
+    setSingle('');
     navigate('/');
   };
-  console.log(single?.email,user?.email)
   function handleUpdate(){
-    setUpdate(true)
-      navigate('/write')
+    setUpdate(true);
+    navigate('/write')
   }
+  // console.log(single?.email,user?.email)
   // console.log(userinfo)
   // console.log(single)
   // console.log(postdata)
@@ -31,14 +31,15 @@ export default function SinglePost({setUpdate,single,setSingle, userinfo, user, 
       <img className='singleimg' src={single.img} alt='No image'></img>
       <div className='singleinfo'>
         <p className='singletitle'>
+          <div>
           {single?.title}
-          {/* ((userinfo?.email === single?.author) || (single?.author === user?.email)) */}
           { (single?.email === user?.email) &&
             <div className='singleicons'>
               <i className="singleitems fa-solid fa-pen-to-square" onClick={()=>handleUpdate()}></i>
               <i className=" singleitems fa-solid fa-trash" onClick={handleRemove}></i>
             </div>
           }
+          </div>
         </p>
         <p className='singleauthor'> Author: {single.author}</p>
         <p className='singledesc'>{single.desc}</p>

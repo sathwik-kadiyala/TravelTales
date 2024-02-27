@@ -16,7 +16,8 @@ export default function Settings({user,setuserinfo}) {
         setImgsrc(imageUrl);
     }
 };
-function handleSubmit() {
+function handleSubmit(e) {
+  e.preventDefault()
   const userinf = {
     img: imgsrc,
     author:name,
@@ -28,7 +29,7 @@ function handleSubmit() {
 }
   return (
       <div className="settingsWrapper">
-        <form onSubmit={(e)=>e.preventDefault()}className="settingsForm">
+        <form onSubmit={handleSubmit} className="settingsForm">
           <label className='settingslabel'>Profile Picture</label>
           <div className="settingsPP">
           <div className="settingsPP">
@@ -56,7 +57,7 @@ function handleSubmit() {
           <textarea  className='settingstextarea'
            placeholder="Tell the world about your world....." 
            onChange={(e)=>setAbout(e.target.value)}/>
-          <button onClick={handleSubmit} className="settingsSubmitButton" type="submit">
+          <button className="settingsSubmitButton" type="submit">
             Update
           </button>
         </form>

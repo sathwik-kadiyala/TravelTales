@@ -9,7 +9,7 @@ export default function Write({ update,setUpdate,single, userinfo, user, postdat
   const [desc, setDesc] = useState("")
   const navigate = useNavigate();
   useEffect(() => {
-    if (single?.author === userinfo?.author || single?.author === user.email) {
+    if (update && (single?.author === userinfo?.author || single?.author === user.email)) {
       setImgsrc(single.img);
       setTitle(single.title);
       setDesc(single.desc);
@@ -28,11 +28,11 @@ export default function Write({ update,setUpdate,single, userinfo, user, postdat
   // console.log("write",userinfo)
   // console.log("write", single)
   // console.log("write",postdata)
-  function handleSubmit() {
+  function handleSubmit(e) {
     // console.log('hi')
     // console.log(update)
+    e.preventDefault()
     if (update) {
-      // If single exists, it means we are updating an existing post
       const updatedPost = {
         ...single,
         img: imgsrc ? imgsrc : write,
@@ -56,8 +56,9 @@ export default function Write({ update,setUpdate,single, userinfo, user, postdat
         title: title,
         email:user.email,
         author: userinfo ? userinfo.author : user.email,
-        desc: desc
+        desc: desc,
       };
+      // console.log(userinfo)
       // console.log("hi",newPost)
       setpostdata(prevPostdata => [...prevPostdata, newPost]);
     }
@@ -76,7 +77,7 @@ export default function Write({ update,setUpdate,single, userinfo, user, postdat
         alt='Upload Image'
 
       />
-      <form onSubmit={(e) => e.preventDefault()} className="writeForm">
+      <form onSubmit={handleSubmit} className="writeForm">
         <div className="writeFormGroup">
           <label htmlFor="fileInput">
             <i className=" writeIcon fa-solid fa-file-circle-plus"></i>
@@ -104,7 +105,7 @@ export default function Write({ update,setUpdate,single, userinfo, user, postdat
             onChange={(e) => setDesc(e.target.value)}
           />
         </div>
-        <button onClick={handleSubmit} className="writeSubmit" type="submit">
+        <button className="writeSubmit" type="submit">
           Post
         </button>
       </form>
