@@ -8,6 +8,7 @@ import userimg from '../assets-images/user.jpg'
 export default function Navbar({ userinfo, user, setuser }) {
   const [open, setOpen] = useState(false)
   // console.log(open)
+  const user1=localStorage.getItem("user")
   const Logout = async () => {
     try {
       await signOut(auth);
@@ -26,7 +27,7 @@ export default function Navbar({ userinfo, user, setuser }) {
 
       <div className={` ${open ? 'show' : 'navmiddle'}`}>
         <ul className='middlelinks'>
-          {user &&
+          {user1 &&
             <>
               <Link to='/' className='let middleitems'>HOME</Link>
               <Link to='/write' className=' let middleitems'>WRITE</Link>
@@ -43,7 +44,7 @@ export default function Navbar({ userinfo, user, setuser }) {
         </ul>
       </div>
       <div className={` ${open ? 'showr' : 'navright'}`}>
-        {!user &&
+        {!user1 &&
           <ul className='RightLinks'>
             <>
               <Link to='/login' className=' let rightitems'>LOGIN</Link>

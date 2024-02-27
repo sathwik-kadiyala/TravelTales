@@ -40,13 +40,13 @@ function App() {
   const [user, setUser] = useState(null);
   const [single, setSingle] = useState({});
   const [postdata, setPostdata] = useState(initialstate)
-  // console.log(userinfo)
+  // console.log(user)
   return (
     <div className="App">
       <Navbar userinfo={userinfo} user={user} setuser={setUser} />
   
       <Routes>
-        <Route element={<Private user={user} />}>
+        <Route element={<Private />}>
           <Route path='/' element={<Home userinfo={userinfo} postdata={postdata}/>} />
           <Route path='/:id' element={<SinglePost setUpdate={setUpdate} single={single} setSingle={setSingle} setPostdata={setPostdata} user={user} postdata={postdata}/>} />
           <Route path='/settings' element={<Settings user={user} setuserinfo={setUserinfo}/>} />

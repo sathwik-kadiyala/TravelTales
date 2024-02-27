@@ -9,7 +9,8 @@ export default function Register() {
   const [password, setPassword] = useState("")
   const [error, setError] = useState(false)
   const navigate = useNavigate()
-  async function handleClick() {
+  async function handleClick(e) {
+    e.preventDefault()
     try {
       await createUserWithEmailAndPassword(auth, email, password)
       setError(false)
@@ -25,13 +26,13 @@ export default function Register() {
   return (
     <div className="register">
       <span className="registerTitle">Register</span>
-      <form className="registerForm" onSubmit={(e) => e.preventDefault()} >
+      <form className="registerForm" onSubmit={handleClick} >
         <label htmlFor="email">Email</label>
         <input id='email' className="registerInput" value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Enter your email..." />
         <label htmlFor='password'>Password</label>
         <input id='password' autoComplete="on" className="registerInput" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Enter your password..." />
         {error && <span className="invalid"> Enter Valid Email or password.</span>}
-        <button className="registerButton" onClick={handleClick}>Register</button>
+        <button className="registerButton" >Register</button>
       </form>
     </div>
   )
