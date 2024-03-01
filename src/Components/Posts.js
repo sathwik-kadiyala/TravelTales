@@ -5,7 +5,7 @@ export default function Posts({postdata}) {
   
 // console.log("posts",postdata)
   return (
-    <div className='postsside'>
+    <div  data-testid="posts" className='postsside'>
       {
         postdata?.map((i,index)=>{
           return(

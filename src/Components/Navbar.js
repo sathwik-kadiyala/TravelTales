@@ -5,7 +5,7 @@ import { signOut } from 'firebase/auth';
 import { useState } from 'react';
 import userimg from '../assets-images/user.jpg'
 
-export default function Navbar({ userinfo, user, setuser }) {
+export default function Navbar({ userinfo, setuser }) {
   const [open, setOpen] = useState(false)
   // console.log(open)
   const user1=localStorage.getItem("user")
@@ -13,6 +13,7 @@ export default function Navbar({ userinfo, user, setuser }) {
     try {
       await signOut(auth);
       setuser(null);
+      localStorage.removeItem("user");
       console.log("Signed out successfully");
     } catch (error) {
       console.log(error);
@@ -24,10 +25,10 @@ export default function Navbar({ userinfo, user, setuser }) {
         <p className='title'> <span className='letter'>T</span>ravel<span className='letter'>T</span>ales</p>
       </Link>
       </div>
-
+      
       <div className={` ${open ? 'show' : 'navmiddle'}`}>
         <ul className='middlelinks'>
-          {user1 &&
+        {user1 &&
             <>
               <Link to='/' className='let middleitems'>HOME</Link>
               <Link to='/write' className=' let middleitems'>WRITE</Link>
@@ -38,21 +39,28 @@ export default function Navbar({ userinfo, user, setuser }) {
                   <img className="topImg" src={userimg} alt='' />
                 )}
               </Link>
+               
               <Link to='/login' onClick={Logout} className='let middleitems'>LOGOUT</Link>
-            </>
-          }
+              </>
+           }
         </ul>
       </div>
+     
       <div className={` ${open ? 'showr' : 'navright'}`}>
-        {!user1 &&
+    
           <ul className='RightLinks'>
-            <>
+          
+          
+            {!user1 &&
+              <>
               <Link to='/login' className=' let rightitems'>LOGIN</Link>
               <Link to='/signup' className=' let rightitems'>SIGN UP</Link>
-            </>
-
+              </>
+            }
+            
+      
           </ul>
-        }
+  
       </div>
 
       <div className='hams' >

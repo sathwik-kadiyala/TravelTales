@@ -35,8 +35,8 @@ export default function SinglePost({setUpdate,single,setSingle, user, postdata ,
           {single?.title}
           { (single?.email === user?.email) &&
             <div className='singleicons'>
-              <i className="singleitems fa-solid fa-pen-to-square" onClick={()=>handleUpdate()}></i>
-              <i className=" singleitems fa-solid fa-trash" onClick={handleRemove}></i>
+              <i data-testid="update-icon" className="singleitems fa-solid fa-pen-to-square" onClick={()=>handleUpdate()}></i>
+              <i data-testid="remove-icon" className=" singleitems fa-solid fa-trash" onClick={handleRemove}></i>
             </div>
           }
           </div>

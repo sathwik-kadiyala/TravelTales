@@ -3,7 +3,7 @@ import defaultimg from '../assets-images/user.jpg'
 export default function Sideinfo({ userinfo }) {
   // console.log("sideinfo",userinfo)
   return (
-    <div className='aboutme'>
+    <div data-testid="sideinfo" className='aboutme'>
       <img className='aboutimg' src={userinfo && userinfo.img ? userinfo.img : defaultimg} alt='' />
       <div className='aboutitem'>
         <p className='abouttitle'>ABOUT ME</p>

@@ -10,7 +10,7 @@ export default function Post({imge,title,author,desc,id}) {
   // console.log(author)
   return (
     <div className='Post' onClick={()=>handleClick(id)}>
-      <img className='postimg' src={imge} alt=''></img>
+      <img className='postimg' src={imge} alt='no image'></img>
       <div className='postinfo'>
         <p className='posttitle'>{title}</p>
         <p className='author'> By : {author}</p>
